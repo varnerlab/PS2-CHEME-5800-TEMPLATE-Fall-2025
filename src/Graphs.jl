@@ -52,24 +52,9 @@ function _search(graph::MySimpleDirectedGraphModel, start::MyGraphNodeModel,
     end
     distances[start.id] = 0.0;
 
-    # main loop -
-    while counter < (number_of_nodes - 1)
-        
-        for (k, _) ∈ graph.edges
-
-            u = k[1];
-            v = k[2];
-
-            alt = distances[u] + myweight(graph, u, v);
-            if alt < distances[v]
-                distances[v] = alt;
-                previous[v] = u;
-            end
-        end
-
-        # increment counter -
-        counter += 1;
-    end
+    # TODO: Implement the Bellman-Ford algorithm here. See pseudocode in lecture notes.
+    # TODO: Don't forget to uncomment the throw statement below when you are done implementing the algorithm.
+    throw(ArgumentError("Bellman-Ford algorithm not yet implemented"));
 
     # check: If we have negatice cycles, then we should throw an error. 
     for (k, _) ∈ graph.edges
